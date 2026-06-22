@@ -1,0 +1,25 @@
+{
+  "name": "sap-mx-cfdi",
+  "description": "Comprehensive reference for Mexico's CFDI 4.0 electronic invoicing standard and its complements (Pagos, Nómina, Carta Porte, Comercio Exterior, Global) and how SAP S/4HANA implements them. Use when filling out, validating, or troubleshooting a CFDI document or any of its complements, when distinguishing SAP's eDocument Cockpit from Document and Reporting Compliance (DRC), or when checking which SAT catalog/version is currently mandatory.",
+  "version": "1.0.0",
+  "author": {
+    "name": "VanillaAutoMX Project"
+  },
+  "license": "Proprietary",
+  "category": "tax-compliance",
+  "keywords": [
+    "cfdi",
+    "sat",
+    "mexico",
+    "carta porte",
+    "comercio exterior",
+    "complemento de pago",
+    "nomina",
+    "anexo 20",
+    "sap drc",
+    "edocument"
+  ],
+  "commands": [
+    "./commands/cfdi-complement-check.md"
+  ]
+}
