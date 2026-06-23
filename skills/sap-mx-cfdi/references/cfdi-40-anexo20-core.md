@@ -55,4 +55,4 @@ Two valid mechanisms, **never mixed within the same operation**:
 
 ## 7. CFDI Traslado (`TipoDeComprobante = "T"`)
 
-Used for goods movement without a sale (no `Total`, conceptually a delivery note made fiscal). This is the CFDI type most relevant to inter-entity vehicle/parts transfers — see `complemento-carta-porte-31.md` for when it must carry the Carta Porte complement, and the Vanilla `CFDI` agent's `cfdi_carta_porte_vehicle_logistics.md` for the automotive multi-entity application.
+Used for goods movement without a sale/enajenación (no `Total`, conceptually a delivery note made fiscal) — e.g., consignment, demo-unit loans, samples, or single-RFC intra-entity logistics. **Not** the right type when an agreed transfer price changes hands between two different legal entities (RFCs): that price is enajenación, so the issuing entity invoices with CFDI de **Ingreso** instead, carrying the Carta Porte complement when the route requires it — see `complemento-carta-porte-31.md` §1 for the transportista/owner trigger paths, and the Vanilla `CFDI` agent's `cfdi_carta_porte_vehicle_logistics.md` §1.4 for the automotive multi-entity application.
