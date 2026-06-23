@@ -25,6 +25,6 @@ It is easy — and this project's own INT/R2R knowledge files have historically 
 
 Every reference file in this skill (`cfdi-40-anexo20-core.md`, `complemento-pagos-20.md`, `complemento-nomina-12.md`, `complemento-carta-porte-31.md`, `complemento-comercio-exterior.md`, `cfdi-global-publico-general.md`) describes a document type that lives in the **eDocument Cockpit** world. None of them are configured through DRC. If a knowledge file or agent in this project says "DRC handles CFDI/Carta Porte stamping," that statement is imprecise and should be corrected to reference the eDocument Cockpit instead — DRC's actual Mexico scope is Electronic Accounting and DIOT/VAT only.
 
-## Open Item for This Project
+## Verification Note
 
-The Vanilla `INT` agent's `int_isa_methodology.md` (SAT Electronic Accounting interface entry) and `R2R`'s `r2r_statutory_compliance_mexico.md` both reference "SAP DRC" — verify each reference is scoped to Electronic Accounting/VAT (correct) and not generalized to cover CFDI stamping broadly (would need correction). This is tracked as part of the CFDI agent rollout's cross-reference weaving step, not a standalone fix.
+The Vanilla `INT` agent's `int_isa_methodology.md` (SAT Electronic Accounting interface entry) and `R2R`'s `r2r_statutory_compliance_mexico.md` both reference "SAP DRC" — re-checked and confirmed every reference is correctly scoped to Electronic Accounting/VAT, never generalized to cover CFDI stamping. `int_isa_methodology.md` even carries an explicit "(NOT SAP DRC — see CFDI knowledge...)" disambiguation line on its PAC CFDI Stamping interface entry. No correction needed as of this writing — re-verify if either file is substantially rewritten.
