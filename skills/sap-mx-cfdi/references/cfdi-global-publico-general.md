@@ -18,7 +18,7 @@ Consolidates retail/cash sales to customers who don't request an individual CFDI
 
 ## Structural Note
 
-The Global CFDI uses the **same base `Comprobante` schema as a normal CFDI 4.0** (it is not a separate complement/root node like Carta Porte or Retenciones) — the distinguishing factors are the generic `Receptor` RFC and a dedicated `Complemento` node (`InformacionAduanera`/periodicity-specific summary fields per the SAT guide) that breaks down the consolidated operations by period. Treat this file as a thin overlay on `cfdi-40-anexo20-core.md`, not a parallel standard.
+The Global CFDI uses the **same base `Comprobante` schema as a normal CFDI 4.0** (it is not a separate complement/root node like Carta Porte or Retenciones) — the distinguishing factors are the generic `Receptor` RFC and a dedicated `InformacionGlobal` node (`Periodicidad`/`Meses`/`Año` attributes per the SAT guide), itself a base-schema child of `Comprobante`, not a `Complemento`, that breaks down the consolidated operations by period. Treat this file as a thin overlay on `cfdi-40-anexo20-core.md`, not a parallel standard.
 
 ## Automotive Application
 

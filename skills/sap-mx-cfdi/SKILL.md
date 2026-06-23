@@ -60,6 +60,7 @@ This skill is **generic and industry-agnostic** — it documents the SAT standar
 | `references/cfdi-global-publico-general.md` | CFDI Global — public-general / cash retail consolidation |
 | `references/catalogs-and-validation.md` | Common SAT catalogs (`c_FormaPago`, `c_UsoCFDI`, `c_ClaveProdServ`, `c_Moneda`...) and common PAC rejection causes |
 | `references/sap-architecture-edocument-vs-drc.md` | The eDocument Cockpit vs. DRC architectural split — which framework owns which document type |
+| `templates/new-complement-onboarding-checklist.md` | Checklist template for onboarding a new SAT complement version into this skill |
 
 ## Version Compatibility
 
