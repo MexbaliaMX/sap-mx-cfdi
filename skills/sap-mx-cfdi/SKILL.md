@@ -4,8 +4,8 @@ description: "Comprehensive reference for Mexico's CFDI 4.0 electronic invoicing
 license: Proprietary
 metadata:
   maintainer: "VanillaAutoMX Project"
-  version: "1.0.0"
-  last_verified: "2026-06-22"
+  version: "1.0.1"
+  last_verified: "2026-07-04"
   sources:
     - "https://www.sat.gob.mx/ (Anexo 20, Guía de llenado CFDI, Guía de llenado CFDI global)"
     - "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_pagos.pdf"
@@ -39,13 +39,13 @@ This skill is **generic and industry-agnostic** — it documents the SAT standar
 
 | Document / Complement | Current Version | Mandatory Since | Reference File |
 |---|---|---|---|
-| CFDI (Comprobante) | 4.0 | Jan 1, 2022 | `references/cfdi-40-anexo20-core.md` |
+| CFDI (Comprobante) | 4.0 | Apr 1, 2023 (available/optional from Jan 1, 2022; mandatory after two SAT extensions) | `references/cfdi-40-anexo20-core.md` |
 | CFDI que ampara Retenciones e Información de Pagos | 2.0 | — | `references/cfdi-retenciones-pagos-info.md` |
 | Complemento de Pago ("Pagos") | 2.0 | Apr 1, 2023 | `references/complemento-pagos-20.md` |
 | Complemento Nómina | 1.2, revisión E | Jan 1, 2026 | `references/complemento-nomina-12.md` |
 | Complemento Carta Porte | 3.1 | Jul 17, 2024 (catalogs updated Aug 7 2025 and Jan 13 2026) | `references/complemento-carta-porte-31.md` |
 | Complemento Comercio Exterior | Version attribute = "2.0" per current SAT guide (commonly still referred to in industry literature as "1.1") | Jan 1, 2023 | `references/complemento-comercio-exterior.md` |
-| CFDI Global (Público en General) | 4.0 | Jan 1, 2022 | `references/cfdi-global-publico-general.md` |
+| CFDI Global (Público en General) | 4.0 | Apr 1, 2023 (same CFDI 4.0 schedule) | `references/cfdi-global-publico-general.md` |
 
 ## File Index
 

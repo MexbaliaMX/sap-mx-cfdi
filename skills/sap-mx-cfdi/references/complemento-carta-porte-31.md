@@ -19,7 +19,7 @@ If the vehicle does **not exceed a C2-class truck** (per NOM-012-SCT-2-2017) **a
 ```
 CartaPorte (root, Version="3.1", IdCCP, TranspInternac, ...)
   ├── RegimenesAduaneros (0,1)
-  │     └── RegimenAduaneroCCP (1..10)   — added by the Jan-2026 catalog update; up to 10 customs regimes per transfer
+  │     └── RegimenAduaneroCCP (1..10)   — part of the 3.1 schema since its July 2024 introduction; up to 10 customs regimes per transfer
   ├── Ubicaciones (1,1)
   │     └── Ubicacion (2..unbounded)     — at least one Origen + one Destino
   ├── Mercancias (1,1)
@@ -36,8 +36,8 @@ CartaPorte (root, Version="3.1", IdCCP, TranspInternac, ...)
 | `TotalDistRec` | Sum of all `DistanciaRecorrida` values, km, 0.01-99999. This is the field to check against the 30 km exemption threshold. |
 | `RegistroISTMO`, `UbicacionPoloOrigen/Destino` | Only for transport through the Istmo de Tehuantepec development corridor — generally N/A for an automotive distributor unless a branch sits in that corridor. |
 
-### `RegimenAduaneroCCP` (customs regime per merchandise) — **the Jan-2026 update**
-Each `RegimenAduaneroCCP` node carries one `RegimenAduanero` key from `catCartaPorte:c_RegimenAduanero`. Up to **10** regimes are now registrable per transfer (previously fewer) — relevant when a single shipment mixes, e.g., a definitive-import vehicle and a temporary-import demo unit.
+### `RegimenAduaneroCCP` (customs regime per merchandise)
+Each `RegimenAduaneroCCP` node carries one `RegimenAduanero` key from `catCartaPorte:c_RegimenAduanero`. Up to **10** regimes are registrable per transfer — a schema capability of Carta Porte 3.1 itself since its July 2024 introduction, not a change from the Jan-2026 catalog update (that update was catalog-data-only: ~3,912 new `c_NumPedimentoAduana` pedimento-relationship entries for fiscal year 2026 — see the file header). Registering multiple regimes is relevant when a single shipment mixes, e.g., a definitive-import vehicle and a temporary-import demo unit.
 
 ### `Ubicacion` (Origen / Destino, ≥2 required)
 | Attribute | Notes |

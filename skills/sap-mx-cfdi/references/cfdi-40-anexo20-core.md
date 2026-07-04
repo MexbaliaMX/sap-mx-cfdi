@@ -1,7 +1,7 @@
 # CFDI 4.0 Core — Anexo 20 §I (Comprobante)
 
 **Source:** SAT, "Anexo 20 — Guía de llenado de los comprobantes fiscales digitales por Internet" (120 pp.), §I.
-**Version documented:** CFDI 4.0 (mandatory since Jan 1, 2022; 3.3 decommissioned).
+**Version documented:** CFDI 4.0 (available/optional from Jan 1, 2022, coexisting with 3.3; mandatory since Apr 1, 2023 after two SAT extensions — 3.3 decommissioned as of that date).
 
 ## 1. Comprobante Node — Required/Conditional Attributes
 
