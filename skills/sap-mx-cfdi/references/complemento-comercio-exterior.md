@@ -1,8 +1,8 @@
 # Complemento Comercio Exterior
 
 **Source:** SAT, "Guía de llenado del comprobante fiscal al que se le deberá incorporar el complemento para Comercio Exterior" (79 pp.).
-**Version note:** the current official guide's `ComercioExterior` root attribute requires the literal value `"2.0"` — industry blogs and several third-party PAC vendors still label this complement "Comercio Exterior 1.1" in marketing copy. **Trust the primary-source `Version` value (`"2.0"`) over the informal "1.1" name** when configuring a system; verify against the live SAT guide URL in `SKILL.md`'s `sources:` before any go-live, since this is exactly the kind of naming drift that causes a schema-version mismatch at PAC stamping time.
-**Mandatory since:** January 1, 2023, for the population described below.
+**Version note:** "1.1" and "2.0" are two distinct, sequential SAT versions, not an informal-name-vs-official-name naming-drift issue. Version 1.1 was incorporated with CFDI 4.0 and was mandatory from **April 1, 2023**. SAT published version 2.0 on Dec 19, 2023, with a hard, no-transition-period cutover: version 1.1 stopped being valid and version 2.0 became mandatory on **January 18, 2024**. The current official guide's `ComercioExterior` root attribute requires the literal value `"2.0"` — verify against the live SAT guide URL in `SKILL.md`'s `sources:` before any go-live, since a system still stamping with the retired 1.1 schema will get rejected.
+**Mandatory since:** January 18, 2024 (version 2.0; version 1.1 was mandatory April 1, 2023 – January 17, 2024).
 
 ## When It Applies
 

@@ -9,11 +9,11 @@ It is **generic and industry-agnostic** — it documents the SAT standard and SA
 | Document / Complement | Version | Mandatory Since |
 |---|---|---|
 | CFDI (Comprobante) | 4.0 | Apr 1, 2023 (available/optional from Jan 1, 2022; mandatory after two SAT extensions) |
-| CFDI que ampara Retenciones e Información de Pagos | 2.0 | — |
+| CFDI que ampara Retenciones e Información de Pagos | 2.0 | Apr 1, 2023 (same CFDI 4.0 cutover) |
 | Complemento de Pago ("Pagos") | 2.0 | Apr 1, 2023 |
 | Complemento Nómina | 1.2, revisión E | Jan 1, 2026 |
 | Complemento Carta Porte | 3.1 | Jul 17, 2024 |
-| Complemento Comercio Exterior | 2.0 | Jan 1, 2023 |
+| Complemento Comercio Exterior | 2.0 (superseded 1.1, no transition period) | Jan 18, 2024 (1.1 was mandatory Apr 1, 2023 – Jan 17, 2024) |
 | CFDI Global (Público en General) | 4.0 | Apr 1, 2023 (same CFDI 4.0 schedule) |
 
 It also disambiguates SAP's **eDocument Cockpit** (transactional CFDI/complement stamping via PAC) from **Document and Reporting Compliance / DRC** (periodic statutory reports: Electronic Accounting, DIOT/VAT) — a distinction that's easy to blur and causes real architecture mistakes when it is.
