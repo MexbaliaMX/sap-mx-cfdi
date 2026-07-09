@@ -8,7 +8,7 @@ Given a description of a Mexican business transaction (a sale, a payment receive
 2. **Which complement(s)** must be incorporated, cross-checking against `sap-mx-cfdi`'s "Current Mandatory Versions" table in `SKILL.md`:
    - Payment received after invoice issuance (PPD) → `complemento-pagos-20.md`
    - Payroll receipt → `complemento-nomina-12.md`
-   - Goods physically moved via a vía general de comunicación (federal highway/rail/air/sea), and not within the C2-truck/30 km exemption → `complemento-carta-porte-31.md`
+   - Goods physically moved via a vía general de comunicación (federal highway/rail/air/sea), and not within the regla 2.7.7.2.8 exemption (≤C2 truck, ≤30 km straight-line *radio de distancia* origen–destino, and no carve-out — comercio exterior/medicamentos/hidrocarburos/foreign carrier) → `complemento-carta-porte-31.md`
    - Definitive export with pedimento `A1` → `complemento-comercio-exterior.md`
    - Public-general/cash retail consolidation → `cfdi-global-publico-general.md`
 3. **Flag version currency**: state plainly if the version this skill documents may be stale (check `last_verified` in `SKILL.md` frontmatter against today's date) and recommend re-verifying against the SAT source URLs before issuing a live document.

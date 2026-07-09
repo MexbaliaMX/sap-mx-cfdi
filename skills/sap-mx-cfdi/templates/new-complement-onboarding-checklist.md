@@ -3,7 +3,7 @@
 Use this when a project needs to support a CFDI complement not yet implemented (e.g., adding Carta Porte to an entity that previously only issued plain CFDI Ingreso/Egreso).
 
 ## 1. Scope confirmation
-- [ ] Confirm the actual trigger condition applies (e.g., for Carta Porte: route exceeds the 30 km/C2 exemption; for Comercio Exterior: the entity genuinely exports under pedimento A1) — don't build for a complement "just in case."
+- [ ] Confirm the actual trigger condition applies (e.g., for Carta Porte: the shipment fails the regla 2.7.7.2.8 exemption test — 30 km straight-line radius / C2 / carve-outs, see `complemento-carta-porte-31.md` §1; for Comercio Exterior: the entity genuinely exports under pedimento A1) — don't build for a complement "just in case."
 - [ ] Identify every legal entity in scope and confirm each has its own correct master data for the complement's entity-specific fields (RFC, Registro Patronal, address) — never assume group-wide values.
 
 ## 2. Version/catalog currency

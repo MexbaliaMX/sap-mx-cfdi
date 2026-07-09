@@ -10,7 +10,13 @@ Two distinct trigger paths:
 2. **Owner moving its own goods** with its own vehicles, no third-party carrier → CFDI Traslado with Carta Porte.
 
 ### Exemption (do not skip Carta Porte by mistake, but also don't over-apply it)
-If the vehicle does **not exceed a C2-class truck** (per NOM-012-SCT-2-2017) **and** the federal-highway portion of the route (origin to final destination, including intermediate stops) **does not exceed 30 km**, the CFDI can be issued **without** the Carta Porte complement. This 30 km/C2 exemption also covers towing, salvage, and vehicle-deposit services, and **transporting a vehicle under its own power** (i.e., driving a vehicle rather than hauling it) within the same 30 km radius.
+**Legal basis: RMF regla 2.7.7.2.8** (RMF 2023/2024; it was regla 2.7.7.12 in RMF 2022 before renumbering — cite by RMF year). The CFDI can be issued **without** the Carta Porte complement only when **all three** conditions hold:
+
+1. **No carve-out applies** — the exemption is expressly unavailable for goods destined for **comercio exterior** operations, **medicamentos**, **hidrocarburos/petrolíferos**, and transport by **foreign-resident carriers**, regardless of distance or vehicle class.
+2. The vehicle does **not exceed the weights and dimensions of a C2-class truck** (NOM-012-SCT-2-2017). C2 itself is *inside* the exemption — RMF 2023 changed the pre-2023 *"características menores a un camión C2"* to *"que **no excedan** los pesos y dimensiones de un camión tipo C2"* — so do not "correct" a `<= C2` implementation against a pre-2023 source.
+3. The ***radio de distancia*** — the **straight-line radius** between the origen inicial and the destino final, including intermediate points (RMF 2023 wording) — **does not exceed 30 km**. This is *not* the sum of driven federal-highway kilometres; an implementation summing routed km will misclassify shipments near the boundary in both directions.
+
+The exemption also covers towing, salvage, and vehicle-deposit services, and **transporting a vehicle under its own power** (i.e., driving a vehicle rather than hauling it) within the same 30 km radius.
 
 **Automotive relevance:** a short intra-city dealer-to-dealer parts run by a courier van is likely exempt; an OEM-plant-to-distributor vehicle delivery or any inter-entity STO transfer crossing real distance on a federal highway is not. Always check the actual route, not just "did we cross a state line."
 
@@ -33,7 +39,7 @@ CartaPorte (root, Version="3.1", IdCCP, TranspInternac, ...)
 | `IdCCP` | 36-char RFC-4122-style UUID identifying this Carta Porte instance, prefixed `CCC` per the documented pattern. |
 | `TranspInternac` | `"Sí"` / `"No"` — international transport. |
 | `EntradaSalidaMerc`, `PaisOrigenDestino`, `ViaEntradaSalida` | Conditional, required when `TranspInternac = "Sí"`. |
-| `TotalDistRec` | Sum of all `DistanciaRecorrida` values, km, 0.01-99999. This is the field to check against the 30 km exemption threshold. |
+| `TotalDistRec` | Sum of all `DistanciaRecorrida` values, km, 0.01-99999 — the **routed (driven) distance**. **Not the exemption metric:** the 30 km test uses the straight-line *radio de distancia* origen–destino (§1), so do not gate complement applicability on this field. |
 | `RegistroISTMO`, `UbicacionPoloOrigen/Destino` | Only for transport through the Istmo de Tehuantepec development corridor — generally N/A for an automotive distributor unless a branch sits in that corridor. |
 
 ### `RegimenAduaneroCCP` (customs regime per merchandise)
@@ -58,4 +64,5 @@ Driver/operator and vehicle (placas, permiso SCT) detail — required whenever `
 ## 3. Common PAC Rejection Causes
 - Stale `c_RegimenAduanero`/pedimento-relationship catalog (most common after a SAT catalog update — confirm the integration's catalog file date against SAT's published update date before blaming the data).
 - `RFCRemitenteDestinatario` not matching the actual legal entity at that physical location (a frequent multi-entity defect — see `cfdi-40-anexo20-core.md` §2 for the parallel `Receptor` RFC-mismatch pattern).
-- Missing Carta Porte when the 30 km/C2 exemption was incorrectly assumed to apply to a longer or heavier shipment.
+- Missing Carta Porte when the 30 km/C2 exemption was incorrectly assumed to apply to a longer or heavier shipment — or to a carve-out shipment (comercio exterior, medicamentos, hidrocarburos, foreign-resident carrier), where the exemption never applies (§1).
+- Boundary shipments misclassified because the exemption test was fed routed/driven kilometres (e.g., `TotalDistRec`) instead of the straight-line *radio de distancia* origen–destino (§1).

@@ -4,8 +4,8 @@ description: "Comprehensive reference for Mexico's CFDI 4.0 electronic invoicing
 license: Proprietary
 metadata:
   maintainer: "VanillaAutoMX Project"
-  version: "1.0.2"
-  last_verified: "2026-07-07"
+  version: "1.0.3"
+  last_verified: "2026-07-08"
   sources:
     - "https://www.sat.gob.mx/ (Anexo 20, Guía de llenado CFDI, Guía de llenado CFDI global)"
     - "http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Guia_llenado_pagos.pdf"
