@@ -14,7 +14,7 @@ Two distinct trigger paths:
 
 1. **No carve-out applies** — the exemption is expressly unavailable for goods destined for **comercio exterior** operations, **medicamentos**, **hidrocarburos/petrolíferos**, and transport by **foreign-resident carriers**, regardless of distance or vehicle class.
 2. The vehicle does **not exceed the weights and dimensions of a C2-class truck** (NOM-012-SCT-2-2017). C2 itself is *inside* the exemption — RMF 2023 changed the pre-2023 *"características menores a un camión C2"* to *"que **no excedan** los pesos y dimensiones de un camión tipo C2"* — so do not "correct" a `<= C2` implementation against a pre-2023 source.
-3. The ***radio de distancia*** — the **straight-line radius** between the origen inicial and the destino final, including intermediate points (RMF 2023 wording) — **does not exceed 30 km**. This is *not* the sum of driven federal-highway kilometres; an implementation summing routed km will misclassify shipments near the boundary in both directions.
+3. The ***radio de distancia*** — the **straight-line radius** between the origen inicial and the destino final, including intermediate points (RMF 2023 wording) — **does not exceed 30 km**. This is *not* the sum of driven federal-highway kilometers; an implementation summing routed km will misclassify shipments near the boundary in both directions.
 
 The exemption also covers towing, salvage, and vehicle-deposit services, and **transporting a vehicle under its own power** (i.e., driving a vehicle rather than hauling it) within the same 30 km radius.
 
@@ -65,4 +65,4 @@ Driver/operator and vehicle (placas, permiso SCT) detail — required whenever `
 - Stale `c_RegimenAduanero`/pedimento-relationship catalog (most common after a SAT catalog update — confirm the integration's catalog file date against SAT's published update date before blaming the data).
 - `RFCRemitenteDestinatario` not matching the actual legal entity at that physical location (a frequent multi-entity defect — see `cfdi-40-anexo20-core.md` §2 for the parallel `Receptor` RFC-mismatch pattern).
 - Missing Carta Porte when the 30 km/C2 exemption was incorrectly assumed to apply to a longer or heavier shipment — or to a carve-out shipment (comercio exterior, medicamentos, hidrocarburos, foreign-resident carrier), where the exemption never applies (§1).
-- Boundary shipments misclassified because the exemption test was fed routed/driven kilometres (e.g., `TotalDistRec`) instead of the straight-line *radio de distancia* origen–destino (§1).
+- Boundary shipments misclassified because the exemption test was fed routed/driven kilometers (e.g., `TotalDistRec`) instead of the straight-line *radio de distancia* origen–destino (§1).
